@@ -1,5 +1,5 @@
-FROM ubuntu
-WORKDIR /t2
-COPY  t2.py .
+FROM python:alpine
+WORKDIR /cloudassignment
+COPY . /cloudassignment/
 RUN pip install nltk
-CMD [ "ubuntu","t2.py" ]
+CMD [ "python","t2.py" ]

@@ -1,26 +1,21 @@
-import nltk
 from nltk.corpus import stopwords
-from collections import Counter
+import nltk
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.probability import FreqDist
+nltk.download('punkt')
+nltk.download("stopwords")
 
-# Download NLTK stopwords if you haven't already
-nltk.download('stopwords')
+stop_word = stopwords.words("english")
 
-# Read the file
-file_path = "random_paragraphs.txt"
-with open(file_path, 'r') as file:
+with open("random_paragraphs.txt", 'r') as file:
     text = file.read()
 
-# Tokenize the text into words
-words = nltk.word_tokenize(text)
+words = word_tokenize(text)
+words_without_stop = []
 
-# Remove stopwords
-stop_words = set(stopwords.words('english'))
-filtered_words = [word for word in words if word.lower() not in stop_words]
+for word in words:
+    if word.lower() not in stop_word:
+        words_without_stop.append(word)
 
-# Count word frequencies
-word_freq = Counter(filtered_words)
-
-# Print the most common words and their frequencies
-print("Most common words and their frequencies:")
-for word, freq in word_freq.most_common():
-    print(f"{word}: {freq}")
+fq = FreqDist(word.lower() for word in words_without_stop)
+print(fq.items())
