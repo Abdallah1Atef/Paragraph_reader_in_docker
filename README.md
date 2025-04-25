@@ -31,6 +31,6 @@ This project demonstrates containerization using Docker to create an isolated Py
 └── README.md             # Documentation
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Abdallah1Atef/Paragraph_reader_in_docker.git
+git clone https://github.com/Abdallah1Atef/Text_Processing_with_Docker.git
 cd text-processing-docker
 ```
