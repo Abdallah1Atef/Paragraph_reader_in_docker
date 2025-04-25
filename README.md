@@ -24,10 +24,14 @@ This project demonstrates containerization using Docker to create an isolated Py
 
 ## Project Structure
 .
-├── Dockerfile            # Docker configuration for Python environment
+├── Dockerfile            # Docker configuration for Python 
+
 ├── Text_Process.py       # Text processing script
+
 ├── requirements.txt      # Python dependencies (nltk)
+
 ├── random_paragraphs.txt # Input text file (mount into container)
+
 └── README.md             # Documentation
 ### 1. Clone the Repository
 ```bash
